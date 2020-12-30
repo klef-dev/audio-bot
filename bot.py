@@ -22,6 +22,6 @@ def audiomack(nothing):
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
     futures = []
-    for x in range(10):
+    for x in range(2):
         futures.append(executor.submit(
             audiomack, nothing=x))
