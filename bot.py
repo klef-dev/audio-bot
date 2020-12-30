@@ -1,12 +1,11 @@
 from selenium import webdriver
-from time import sleep, time
-import concurrent.futures
+from time import sleep
 
+print("Opening Browser...")
 
-def audiomack(nothing):
-    print("Opening Browser...")
+driver = webdriver.Chrome()
 
-    driver = webdriver.Chrome()
+for x in range(5000):
     print("Requesting BR's page...")
     driver.get("https://audiomack.com/blessedray/album/prodigy-ep-vol-1")
     sleep(2)
@@ -19,9 +18,5 @@ def audiomack(nothing):
     print("Playing song...")
     sleep(2)
 
-
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = []
-    for x in range(2):
-        futures.append(executor.submit(
-            audiomack, nothing=x))
+driver.close()
+print("Done ✅")
