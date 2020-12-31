@@ -25,7 +25,7 @@ for x in range(5000):
 
     print("Play button clicked")
 
-    WebDriverWait(driver, 100).until(
+    WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located(
             (By.CLASS_NAME, "play-button--playing"))
     )
@@ -39,7 +39,7 @@ for x in range(5000):
 
     driver.execute_script("arguments[0].click();", btn2)
 
-    WebDriverWait(driver, 60).until(
+    WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located(
             (By.CLASS_NAME, "play-button--playing"))
     )
