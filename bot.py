@@ -16,32 +16,32 @@ for x in range(5000):
 
     print("Trying to play song..")
 
-    try:
-        driver.find_element_by_xpath(
-            '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]').click()
+    # try:
+    driver.find_element_by_xpath(
+        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]').click()
 
-        WebDriverWait(driver, 60).until(
-            EC.visibility_of_element_located(
-                (By.CLASS_NAME, "play-button--playing"))
-        )
+    WebDriverWait(driver, 60).until(
+        EC.visibility_of_element_located(
+            (By.CLASS_NAME, "play-button--playing"))
+    )
 
-        print("Playing 1 song...")
+    print("Playing 1 song...")
 
-        sleep(5)
+    sleep(5)
 
-        driver.find_element_by_xpath(
-            '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/button[2]').click()
+    driver.find_element_by_xpath(
+        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/button[2]').click()
 
-        WebDriverWait(driver, 60).until(
-            EC.visibility_of_element_located(
-                (By.CLASS_NAME, "play-button--playing"))
-        )
+    WebDriverWait(driver, 60).until(
+        EC.visibility_of_element_located(
+            (By.CLASS_NAME, "play-button--playing"))
+    )
 
-        print("Playing 2 song...")
+    print("Playing 2 song...")
 
-        sleep(5)
-    except:
-        print("Couldn't play song")
+    sleep(5)
+    # except:
+    #     print("Couldn't play song")
 
 driver.quit()
 print("Done ✅")
