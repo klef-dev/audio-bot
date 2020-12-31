@@ -17,8 +17,11 @@ for x in range(5000):
     print("Trying to play song..")
 
     # try:
-    driver.find_element_by_xpath(
-        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]').click()
+
+    btn1 = driver.find_element_by_xpath(
+        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]')
+
+    driver.execute_script("arguments[0].click();", btn1)
 
     WebDriverWait(driver, 60).until(
         EC.visibility_of_element_located(
@@ -29,8 +32,10 @@ for x in range(5000):
 
     sleep(5)
 
-    driver.find_element_by_xpath(
-        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/button[2]').click()
+    btn2 = driver.find_element_by_xpath(
+        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/button[2]')
+
+    driver.execute_script("arguments[0].click();", btn2)
 
     WebDriverWait(driver, 60).until(
         EC.visibility_of_element_located(
