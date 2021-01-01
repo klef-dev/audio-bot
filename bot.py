@@ -12,6 +12,8 @@ for x in range(5000):
     print("Opening Browser...")
 
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
 
     driver = webdriver.Chrome(options=chrome_options)
 
@@ -23,7 +25,7 @@ for x in range(5000):
 
     try:
         btn1 = driver.find_element_by_xpath(
-            '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]')
+            '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[1]/div[2]/ul/li/button[1]')
 
         driver.execute_script("arguments[0].click();", btn1)
 
