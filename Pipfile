@@ -9,6 +9,7 @@ verify_ssl = true
 selenium = "*"
 requests = "*"
 pyvirtualdisplay = "*"
+schedule = "*"
 
 [requires]
 python_version = "3.8"
