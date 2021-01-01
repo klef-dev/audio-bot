@@ -3,52 +3,53 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
-print("Opening Browser...")
-
-driver = webdriver.Chrome()
 
 for x in range(5000):
+    chrome_options = Options()
+
+    print("Opening Browser...")
+
+    chrome_options.add_argument("--headless")
+
+    driver = webdriver.Chrome(options=chrome_options)
+
     print("Requesting BR's page...")
-    driver.implicitly_wait(10)
+
     driver.get("https://audiomack.com/blessedray/album/prodigy-ep-vol-1")
-    sleep(10)
 
     print("Trying to play song..")
 
-    # try:
+    try:
+        btn1 = driver.find_element_by_xpath(
+            '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]')
 
-    btn1 = driver.find_element_by_xpath(
-        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/button[2]')
+        driver.execute_script("arguments[0].click();", btn1)
 
-    driver.execute_script("arguments[0].click();", btn1)
+        try:
+            paused = WebDriverWait(driver, 10).until(
+                EC.visibility_of_element_located(
+                    (By.CLASS_NAME, "play-button--paused"))
+            )
 
-    print("Play button clicked")
+            if paused:
+                driver.find_element_by_xpath(
+                    '//*[@id="react-view"]/div[7]/div/div[1]/button[2]').click()
+        except:
+            pass
 
-    # WebDriverWait(driver, 10).until(
-    #     EC.visibility_of_element_located(
-    #         (By.CLASS_NAME, "play-button--playing"))
-    # )
+        playing = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located(
+                (By.CLASS_NAME, "play-button--playing"))
+        )
 
-    print("Playing 1 song...")
+        print("Playing 1 song...")
 
-    sleep(20)
+        sleep(2)
 
-    btn2 = driver.find_element_by_xpath(
-        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/button[2]')
-
-    driver.execute_script("arguments[0].click();", btn2)
-
-    # WebDriverWait(driver, 10).until(
-    #     EC.visibility_of_element_located(
-    #         (By.CLASS_NAME, "play-button--playing"))
-    # )
-
-    print("Playing 2 song...")
-
-    sleep(20)
-    # except:
-    #     print("Couldn't play song")
-
-driver.quit()
+        print("Done with ", format(x+1))
+    except:
+        print("Couldn't play song")
+    driver.quit()
 print("Done ✅")
