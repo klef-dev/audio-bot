@@ -65,25 +65,34 @@ def favorite():
             print('Adding song to favorite...')
 
             try:
-                btn1 = driver.find_element_by_xpath(
-                    '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[1]/div[2]/ul/li/button[2]')
+                already = WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located(
+                        (By.CLASS_NAME, "MusicActionButton-module__active--3fZrX"))
+                )
 
-                driver.execute_script("arguments[0].click();", btn1)
-
+                if already:
+                    print("Song already added to favorite")
+            except:
                 try:
-                    favorite = WebDriverWait(driver, 10).until(
-                        EC.visibility_of_element_located(
-                            (By.CLASS_NAME, "toast-notification"))
-                    )
+                    btn1 = driver.find_element_by_xpath(
+                        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[1]/div[2]/ul/li/button[2]')
 
-                    if favorite:
-                        print("Song added to favorite")
+                    driver.execute_script("arguments[0].click();", btn1)
 
-                except:
-                    print("Favorite toast not found")
+                    try:
+                        favorite = WebDriverWait(driver, 10).until(
+                            EC.visibility_of_element_located(
+                                (By.CLASS_NAME, "toast-notification"))
+                        )
 
-            except expression as identifier:
-                print("Couldn't add song to favorite")
+                        if favorite:
+                            print("Song added to favorite")
+
+                    except:
+                        print("Favorite toast not found")
+
+                except expression as identifier:
+                    print("Couldn't add song to favorite")
 
             print("Done with " + user['username'])
         except:

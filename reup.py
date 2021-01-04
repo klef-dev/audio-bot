@@ -65,27 +65,35 @@ def reup():
             print('Adding song to reup...')
 
             try:
-                btn1 = driver.find_element_by_xpath(
-                    '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[1]/div[2]/ul/li/button[3]')
+                already = WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located(
+                        (By.CLASS_NAME, "MusicActionButton-module__active--3fZrX"))
+                )
 
-                driver.execute_script("arguments[0].click();", btn1)
-
+                if already:
+                    print("Song already added to reup")
+            except:
                 try:
-                    reup = WebDriverWait(driver, 10).until(
-                        EC.visibility_of_element_located(
-                            (By.CLASS_NAME, "toast-notification"))
-                    )
+                    btn1 = driver.find_element_by_xpath(
+                        '//*[@id="react-view"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[1]/div[2]/ul/li/button[3]')
 
-                    if reup:
-                        print("Song added to reup")
+                    driver.execute_script("arguments[0].click();", btn1)
 
+                    try:
+                        reup = WebDriverWait(driver, 10).until(
+                            EC.visibility_of_element_located(
+                                (By.CLASS_NAME, "toast-notification"))
+                        )
+
+                        if reup:
+                            print("Song added to reup")
+
+                    except:
+                        print("Reup toast not found")
+
+                    sleep(5)
                 except:
-                    print("Reup toast not found")
-
-                sleep(5)
-
-            except expression as identifier:
-                print("Couldn't add song to reup")
+                    print("Couldn't add song to reup")
 
             print("Done with " + user['username'])
         except:
