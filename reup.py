@@ -19,7 +19,7 @@ def reup():
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--no-sandbox')
 
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options=chrome_options)
 
         print("Requesting BR's page...")
 
