@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from users import users
-import schedule
 
 
 def favorite():
@@ -94,9 +93,3 @@ def favorite():
 
 
 favorite()
-
-# schedule.every().day.do(botiomack)
-
-# while True:
-#     schedule.run_pending()
-#     sleep(1)
