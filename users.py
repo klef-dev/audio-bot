@@ -1,5 +1,65 @@
 users = [
     {
+        "email": "NgoliOluchi@rhyta.com",
+        "username": "NgoliOluchi",
+        "password": "NgoliOluchi"
+    },
+    {
+        "email": "FumnanyaChioke@dayrep.com",
+        "username": "FumnanyaChioke",
+        "password": "FumnanyaChioke"
+    },
+    {
+        "email": "ChimaijemOkwuoma@teleworm.us",
+        "username": "ChimaijemOkwuoma",
+        "password": "ChimaijemOkwuoma"
+    },
+    {
+        "email": "IfesinachiUchenna@dayrep.com",
+        "username": "IfesinachiUchenna",
+        "password": "IfesinachiUchenna"
+    },
+    {
+        "email": "OlejuruAzikiwe@teleworm.us",
+        "username": "OlejuruAzikiwe",
+        "password": "OlejuruAzikiwe"
+    },
+    {
+        "email": "EbelegbulamIfeanyichukwu@rhyta.com",
+        "username": "EbelegbulamIfeanyichukwu",
+        "password": "EbelegbulamIfeanyichukwu"
+    },
+    {
+        "email": "ChukwumaMbadiwe@teleworm.us",
+        "username": "ChukwumaMbadiwe",
+        "password": "ChukwumaMbadiwe"
+    },
+    {
+        "email": "ChikadibiaIkedinachukwu@teleworm.us",
+        "username": "ChikadibiaIkedinachukwu",
+        "password": "ChikadibiaIkedinachukwu"
+    },
+    {
+        "email": "ChinonyelumChimaoke@dayrep.com",
+        "username": "ChinonyelumChimaoke",
+        "password": "ChinonyelumChimaoke"
+    },
+    {
+        "email": "AmaechiOnyemaechi@dayrep.com",
+        "username": "AmaechiOnyemaechi",
+        "password": "AmaechiOnyemaechi"
+    },
+    {
+        "email": "OkwudiliolisaIfeatu@armyspy.com",
+        "username": "OkwudiliolisaIfeatu",
+        "password": "OkwudiliolisaIfeatu"
+    },
+    {
+        "email": "EbelechukwuChinwendu@rhyta.com",
+        "username": "EbelechukwuChinwendu",
+        "password": "EbelechukwuChinwendu"
+    },
+    {
         "email": "UgochukwutubelumOkwukwe@armyspy.com",
         "username": "Ugochukwutubelum",
         "password": "Ugochukwutubelum"
