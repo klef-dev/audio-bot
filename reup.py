@@ -21,9 +21,9 @@ def reup():
 
         driver = webdriver.Chrome(options=chrome_options)
 
-        print("Requesting BR's page...")
+        print("Requesting WA6's page...")
 
-        driver.get("https://audiomack.com/blessedray/album/prodigy-ep-vol-1")
+        driver.get("https://audiomack.com/wa6/album/cacti")
 
         print("Clicking on sign in...")
 
