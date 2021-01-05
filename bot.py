@@ -10,7 +10,7 @@ import schedule
 
 
 def botiomack():
-    for x in range(5000):
+    for x in range(10000):
         chrome_options = Options()
 
         print("Opening Browser...")
@@ -21,9 +21,9 @@ def botiomack():
 
         driver = webdriver.Chrome(options=chrome_options)
 
-        print("Requesting BR's page...")
+        print("Requesting WA6's page...")
 
-        driver.get("https://audiomack.com/blessedray/album/prodigy-ep-vol-1")
+        driver.get("https://audiomack.com/wa6/album/cacti")
 
         print("Trying to play song..")
 
@@ -50,7 +50,7 @@ def botiomack():
                     (By.CLASS_NAME, "play-button--playing"))
             )
 
-            print("Playing 1 song...")
+            print("Playing song...")
 
             sleep(2)
 
